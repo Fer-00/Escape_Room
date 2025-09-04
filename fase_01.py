@@ -1,8 +1,9 @@
 import pyxel as px #controla a fase em si
+import frames.py
 
 class Fase01:
 	def __init__(self):
-		pass
+		frame = Frames()
 
 	def transicao(self,atual,prox):
 		pass
