@@ -14,11 +14,16 @@ class Home:
 		if px.btnp(px.KEY_Q):
 			px.quit()
 		elif px.btnp(px.KEY_SPACE) or px.btnp(px.KEY_RETURN):
-			self.frame.jogo_start() #variável pertencente a frames que será declarada futuramente
+			#self.frame.jogo_start() #variável pertencente a frames que será declarada futuramente
+			self.draw()
 		elif (self.mouse_x <= 64 and self.mouse_x >= 54) and (self.mouse_y <= 64 and self.mouse_y >= 54) and px.btn(px.MOUSE_BUTTON_LEFT):
-			self.frame.jogo_start()
+			#self.frame.jogo_start()
+			self.draw()
 		else:
 			pass
 	def draw(self):
-		pass
+		self.corFundo = 0
+		px.cls(self.corFundo)	
+		px.bltm(0,0,1,0,0,128,128,0,0,1.0)
+		px.mouse(True)
 Home()
