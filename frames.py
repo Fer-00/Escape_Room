@@ -32,11 +32,11 @@ class Frames:
 		else:
 			pass
 
-	def telaInicial(self):
+'''	def telaInicial(self):
 		px.cls(self.corFundo)
 
 	def telaFinal(self):
-		pass
+		pass'''
 
 '''	def jogo_start(self): #migrar para draw
 		self.corFundo = 0
