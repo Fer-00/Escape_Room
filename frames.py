@@ -6,6 +6,9 @@ class Frames:
 	def __init__(self):
 		self.inventario = []
 		self.item = [] #item,img,usos
+		self.corFundo = 2
+		px.init(128,128,title="Escape Room")
+		px.load('1.pyxres')
 
 	def addItem(self):
 		pass
@@ -19,16 +22,13 @@ class Frames:
 	def ctlInventario(self):
 		pass
 
-	def telaIncial(self):
-		pass
+	def telaInicial(self):
+		px.cls(self.corFundo)	
 
-	def jogo_fase01(self):
-		pass
+	def jogo_start(self):
+		self.corFundo = 0
+		px.cls(self.corFundo)	
+		px.bltm(0,0,1,0,0,128,128,0,0,1.0)
 
 	def telaFinal(self):
-
-	def update(self):
-		pass
-
-	def draw(self):
 		pass
