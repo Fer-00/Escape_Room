@@ -28,7 +28,8 @@ class Home:
 		if id == 1:
 			self.corFundo = 4
 			px.cls(self.corFundo)
-			px.bltm(49,57,1,65,42,30,14)
+			px.bltm(0,0,1,0,0,128,128,0,0,1.0)
+			px.bltm(49,57,1,65,26,30,14)
 			px.mouse(True)
 		elif id == 0:
 			self.corFundo = 0
