@@ -6,6 +6,7 @@ import frames
 class Home:
 	def __init__(self):
 		self.frame = frames.Frames()
+		global id
 		id = 1
 		px.run(self.draw,self.update)
 	def update(self):
@@ -27,7 +28,7 @@ class Home:
 		if id == 1:
 			self.corFundo = 4
 			px.cls(self.corFundo)
-			#px.bltm(32,16,1,0,0,30,14,0,0,1.0)
+			px.bltm(49,57,1,65,42,30,14)
 			px.mouse(True)
 		elif id == 0:
 			self.corFundo = 0
