@@ -7,17 +7,6 @@ class Fase01:
 
 	def transicao(self,atual,prox):
 		pass
-
-	def cronometro(self):
-		global tempo
-		tempo = px.frame_count // 30
-		if tempo == 300:
-			px.text(50,50,"VOCÊ PERDEU",px.COLOR_WHITE)
-
-##	def timer(self):
-	def venceu(self):
-		with open("tempos.txt","a") as t:
-			t.write(f"\n{tempo}")
 			
 	def getUP(self): #teto
 		pass

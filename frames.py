@@ -2,10 +2,10 @@
 
 import pyxel as px
 
-scores = "tempos.txt" #para mostrar os melhores tempos
-
 class Frames:
 	def __init__(self):
+		global tempo
+		self.lim = 300 #300 segundos = 5 minuntos o tempo que você tem para sair da sala
 		self.inventario = []
 		self.item = [] #item,usos
 		self.corFundo = 2
@@ -13,9 +13,25 @@ class Frames:
 		px.load('1.pyxres')
 		#px.mouse(visible=True)
 
+	def cronometro(self):
+		tempo = px.frame_count // 30
+		if tempo == 300:
+			tempo = 1000
+		return tempo
+
+	def timer(self,inicio,atual):
+		self.regressivo = (atual - inicio)// 30 #30 fps
+		self.sobra = self.lim - self.regressivo
+		return self.sobra
+
+	def venceu(self):
+		with open("tempos.txt","a") as t:
+			t.write(f"\n{tempo}")
+
 	def addItem(self, obj, posImg): #nome do objeto, qual a imagem que corresponde a ele na lista de imagens
 		self.item.extend((obj,1))
 		#px.bltm(49,57,1,65,26,30,14)
+
 
 	def testaItem(self,item): #chamada toda vez que o item é utilizado para checar se ainda há usos
 		if (item[2] - 1) == 0:
@@ -33,6 +49,41 @@ class Frames:
 			return False
 		else:
 			pass
+
+#métodos para contruir imagens com mais efiência e em telas diferentes
+	
+	def relogio(self,x,y):
+		px.bltm(49,57,1,65,26,30,14)
+
+	def mesa(self,x,y):
+		px.bltm(49,57,1,65,26,30,14)
+		
+	def martelo(self,x,y):
+		px.bltm(49,57,1,65,26,30,14)
+		
+	def quadro(self,x,y):
+		px.bltm(49,57,1,65,26,30,14)
+		
+	def mapa(self,x,y):
+		px.bltm(49,57,1,65,26,30,14)
+		
+	def bau(self,x,y):
+		px.bltm(49,57,1,65,26,30,14)
+		
+	def porta(self,x,y):
+		px.bltm(49,57,1,65,26,30,14)
+		
+	def tijolos(self,x,y):
+		px.bltm(49,57,1,65,26,30,14)
+		
+	def escape(self,x,y)
+		px.bltm(49,57,1,65,26,30,14)
+
+	def carta(self,x,y)
+		px.bltm(49,57,1,65,26,30,14)
+	def chave(self,x,y)
+		px.bltm(49,57,1,65,26,30,14)
+		
 
 '''	def telaInicial(self):
 		px.cls(self.corFundo)
