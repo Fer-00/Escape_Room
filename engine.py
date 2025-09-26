@@ -18,7 +18,7 @@ class Engine:
 			px.quit()
 		elif px.btnp(px.KEY_SPACE) or px.btnp(px.KEY_RETURN):
 			id = 0
-		elif (self.mouse_x <= 40 and self.mouse_x >= 26) and (self.mouse_y <= 95 and self.mouse_y >= 65) and px.btn(px.MOUSE_BUTTON_LEFT):
+		elif (self.mouse_x <= 79 and self.mouse_x >= 49) and (self.mouse_y <= 71 and self.mouse_y >= 57) and px.btn(px.MOUSE_BUTTON_LEFT):
 			id = 0
 		else:
 			pass

@@ -5,6 +5,7 @@ class Fase01:
 	def __init__(self):
 		frame = Frames()
 		lista_frames = []
+		clicaveis = [] #coordenadas de objetos fixos clicaveis e seus id (bau, relogio, porta)
 
 	def transicao(self,atual,prox):
 		if prox > atual:
