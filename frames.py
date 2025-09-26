@@ -28,10 +28,17 @@ class Frames:
 		with open("tempos.txt","a") as t:
 			t.write(f"\n{tempo}")
 
-	def addItem(self, obj, posImg): #nome do objeto, qual a imagem que corresponde a ele na lista de imagens
+	def addItem(self, obj, temp,x,y): #nome do objeto, numero setado previamente e listado na readme para facilitar a chamada de funções de plotagem de imagem no inventário
 		self.item.extend((obj,1))
+		if temp == 1:
+			self.martelo(x,y)
+		elif temp == 2:
+			self.mapa(x,y)
+		elif temp == 3:
+			self.chave(x,y)
+		else:
+			pass
 		#px.bltm(49,57,1,65,26,30,14)
-
 
 	def testaItem(self,item): #chamada toda vez que o item é utilizado para checar se ainda há usos
 		if (item[2] - 1) == 0:
@@ -76,12 +83,12 @@ class Frames:
 	def tijolos(self,x,y):
 		px.bltm(49,57,1,65,26,30,14)
 		
-	def escape(self,x,y)
+	def escape(self,x,y):
 		px.bltm(49,57,1,65,26,30,14)
 
-	def carta(self,x,y)
+	def carta(self,x,y):
 		px.bltm(49,57,1,65,26,30,14)
-	def chave(self,x,y)
+	def chave(self,x,y):
 		px.bltm(49,57,1,65,26,30,14)
 		
 

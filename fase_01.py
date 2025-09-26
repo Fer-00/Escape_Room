@@ -4,26 +4,31 @@ import frames.py
 class Fase01:
 	def __init__(self):
 		frame = Frames()
+		lista_frames = []
 
 	def transicao(self,atual,prox):
-		pass
+		if prox > atual:
+			return -1
+		elif prox > atual:
+			return 1
+		else:
+			return 0
 			
-	def getUP(self): #teto
+	def setarFrames(self,aqui,la):
+		aux = transicao(aqui,la)
+		#comando para recuperar indice do aqui
+		return lista_frames[index + aux]
+
+	def fase01(self):
 		pass
 
-	def getFront(self): #parede da porta
+	def fase02(self):
 		pass
 
-	def getRight(self): # parede da direita
+	def fase03(self):
 		pass
 
-	def getLeft(self): # parede da esquerda
-		pass
-
-	def getDown(self): # piso
-		pass
-
-	def getBotton(self): # parede do fundo
+	def fase04(self):
 		pass
 
 	def update(self):
