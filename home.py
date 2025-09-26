@@ -6,6 +6,8 @@ import frames
 class Home:
 	def __init__(self):
 		self.frame = frames.Frames()
+
+	def rodarInicial(self):
 		px.run(self.draw,self.update)
 
 	def update(self):
@@ -14,9 +16,11 @@ class Home:
 		if px.btnp(px.KEY_Q):
 			px.quit()
 		elif px.btnp(px.KEY_SPACE) or px.btnp(px.KEY_RETURN):
-			self.frame.jogo_start()
+			#self.frame.jogo_start()
+			px.reset()
 		elif (self.mouse_x <= 64 and self.mouse_x >= 54) and (self.mouse_y <= 64 and self.mouse_y >= 54) and px.btn(px.MOUSE_BUTTON_LEFT):
-			self.frame.jogo_start()
+			#self.frame.jogo_start()
+			px.reset()
 		else:
 			pass
 	def draw(self):

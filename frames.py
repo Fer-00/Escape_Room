@@ -9,8 +9,6 @@ class Frames:
 		self.inventario = []
 		self.item = [] #item,usos
 		self.corFundo = 2
-		px.init(128,128,title="Escape Room")
-		px.load('1.pyxres')
 		#px.mouse(visible=True)
 
 	def cronometro(self):
@@ -60,35 +58,46 @@ class Frames:
 #métodos para contruir imagens com mais efiência e em telas diferentes
 	
 	def relogio(self,x,y):
+		px.load('1.pyxres')
 		px.bltm(49,57,1,65,26,30,14)
 
 	def mesa(self,x,y):
+		px.load('1.pyxres')
 		px.bltm(49,57,1,65,26,30,14)
 		
 	def martelo(self,x,y):
+		px.load('1.pyxres')
 		px.bltm(49,57,1,65,26,30,14)
 		
 	def quadro(self,x,y):
+		px.load('1.pyxres')
 		px.bltm(49,57,1,65,26,30,14)
 		
 	def mapa(self,x,y):
+		px.load('1.pyxres')
 		px.bltm(49,57,1,65,26,30,14)
 		
 	def bau(self,x,y):
+		px.load('1.pyxres')
 		px.bltm(49,57,1,65,26,30,14)
 		
 	def porta(self,x,y):
+		px.load('1.pyxres')
 		px.bltm(49,57,1,65,26,30,14)
 		
 	def tijolos(self,x,y):
+		px.load('1.pyxres')
 		px.bltm(49,57,1,65,26,30,14)
 		
 	def escape(self,x,y):
+		px.load('1.pyxres')
 		px.bltm(49,57,1,65,26,30,14)
 
 	def carta(self,x,y):
+		px.load('1.pyxres')
 		px.bltm(49,57,1,65,26,30,14)
 	def chave(self,x,y):
+		px.load('1.pyxres')
 		px.bltm(49,57,1,65,26,30,14)
 		
 
@@ -98,7 +107,8 @@ class Frames:
 	def telaFinal(self):
 		pass'''
 
-'''	def jogo_start(self): #migrar para draw
+def jogo_start(self):
+		px.load('1.pyxres')
 		self.corFundo = 0
 		px.cls(self.corFundo)	
-		px.bltm(0,0,1,0,0,128,128,0,0,1.0)'''
+		px.bltm(0,0,1,0,0,128,128,0,0,1.0)

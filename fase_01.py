@@ -1,5 +1,5 @@
 import pyxel as px #controla a fase em si
-import frames.py
+import frames
 
 class Fase01:
 	def __init__(self):
