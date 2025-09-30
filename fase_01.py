@@ -3,9 +3,9 @@ import frames
 
 class Fase01:
 	def __init__(self):
-		frame = frames.Frames()
-		lista_frames = []
-		clicaveis = [] #coordenadas de objetos fixos clicaveis e seus id (bau, relogio, porta)
+		self.frame = frames.Frames()
+		self.lista_frames = []
+		self.clicaveis = [] #coordenadas de objetos fixos clicaveis e seus id (bau, relogio, porta)
 
 	def transicao(self,atual,prox):
 		if prox > atual:
@@ -18,7 +18,11 @@ class Fase01:
 	def setarFrames(self,aqui,la):
 		aux = self.transicao(aqui,la)
 		#comando para recuperar indice do aqui
+<<<<<<< HEAD
 		return self.lista_frames[self.index + aux]
+=======
+		return self.lista_frames[index + aux]
+>>>>>>> bd6f65a5944b754969c2afe9ec1a23636426d66d
 
 	def jogo_start(self):
 		pass
