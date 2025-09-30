@@ -1,6 +1,6 @@
 #passar o motor do jogo para ca, deixar apenas os metodos nas outras
 import pyxel as px
-import frames, end, home
+import frames, end, home, fase_01, time
 #, end, fase_01, home
 
 class Engine:
@@ -8,6 +8,9 @@ class Engine:
 		self.frame = frames.Frames()
 		self.final = end.End()
 		self.inicial = home.Home()
+		self.fases = fase_01.Fase01()
+		self.start_time = time.time()  # Marca o início do jogo
+		self.minutos, self.segundos = 0,0
 		global id
 		id = 1
 		px.init(128,128,title="Escape Room")
@@ -30,20 +33,20 @@ class Engine:
 	def draw(self):
 		global id
 		if id == 1:
-#			self.corFundo = 4
-#			px.cls(self.corFundo)
-#			px.bltm(0,0,1,128,0,128,128,1,0,1.0)
-#			px.bltm(49,57,1,65,26,30,14) #65 26 coordenadas do botão escape
 			self.inicial.rodarInicial()
-			id = 0
-		elif id == 0:
-			self.corFundo = 0
-			px.cls(self.corFundo)	
-			px.bltm(0,0,1,0,0,128,128,0,0,1.0)
-			#px.text(5,118,"TEXTO",px.COLOR_WHITE)
-		elif id == 2:
+		elif self.minutos == 5:
+			#perdeu
 			self.final.tela_final()
-			#tela final
+		elif id == 0:
+			self.fases.fase01()
+			elapsed = int(time.time() - self.start_time)
+			self.minutos = elapsed // 60
+			self.segundos = elapsed % 60
+			px.text(16, 88, f"{self.minutos:02}:{self.segundos:02}", 7)  # Mostra o tempo no canto
+		elif id == 2: #venceu
+			tempo = str(self.minutos) + ":" + str(self.segundos)
+			self.final.tela_final()
+			#tela final 
 		else:
 			pass
 		px.mouse(True)

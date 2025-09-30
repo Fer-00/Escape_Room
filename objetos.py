@@ -41,4 +41,3 @@ def number(x,y,number):
 
     elif number == ":":
         px.blt(x, y, 0,40,164,1,3,0)
-                   

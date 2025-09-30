@@ -3,7 +3,7 @@ import frames
 
 class Fase01:
 	def __init__(self):
-		frame = Frames()
+		frame = frames.Frames()
 		lista_frames = []
 		clicaveis = [] #coordenadas de objetos fixos clicaveis e seus id (bau, relogio, porta)
 
@@ -20,8 +20,14 @@ class Fase01:
 		#comando para recuperar indice do aqui
 		return lista_frames[index + aux]
 
-	def fase01(self):
+	def jogo_start(self):
 		pass
+
+	def fase01(self):
+		px.load('1.pyxres')
+		self.corFundo = 0
+		px.cls(self.corFundo)	
+		px.bltm(0,0,1,0,0,128,128,0,0,1.0)
 
 	def fase02(self):
 		pass
@@ -30,10 +36,4 @@ class Fase01:
 		pass
 
 	def fase04(self):
-		pass
-
-	def update(self):
-		pass
-
-	def draw(self):
 		pass
