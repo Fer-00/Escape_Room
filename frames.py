@@ -1,12 +1,14 @@
 #responsável por controlar os frames do jogo, as trocas entre eles e o que vai aparecer sobre todos eles
 
 import pyxel as px
+import objetos as ob
 
 class Frames:
 	def __init__(self):
 		self.lim = 300 #300 segundos = 5 minuntos o tempo que você tem para sair da sala
 		self.inventario = []
 		self.item = [] #item,usos
+		self.itens = objetos.Objetos()
 		self.corFundo = 2
 		#px.mouse(visible=True)
 
@@ -17,11 +19,11 @@ class Frames:
 	def addItem(self, obj, temp,x,y): #nome do objeto, numero setado previamente e listado na readme para facilitar a chamada de funções de plotagem de imagem no inventário
 		self.item.extend((obj,1))
 		if temp == 1:
-			self.martelo(x,y)
+			self.itens.martelo(x,y)
 		elif temp == 2:
-			self.mapa(x,y)
+			self.itens.mapa(x,y)
 		elif temp == 3:
-			self.chave(x,y)
+			self.itens.chave(x,y)
 		else:
 			pass
 		#px.bltm(49,57,1,65,26,30,14)
