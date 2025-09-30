@@ -1,35 +1,39 @@
 import pyxel as px #controla a fase em si
-import frames.py
+import frames
 
 class Fase01:
 	def __init__(self):
-		frame = Frames()
+		frame = frames.Frames()
+		lista_frames = []
+		clicaveis = [] #coordenadas de objetos fixos clicaveis e seus id (bau, relogio, porta)
 
 	def transicao(self,atual,prox):
+		if prox > atual:
+			return -1
+		elif prox > atual:
+			return 1
+		else:
+			return 0
+			
+	def setarFrames(self,aqui,la):
+		aux = transicao(aqui,la)
+		#comando para recuperar indice do aqui
+		return lista_frames[index + aux]
+
+	def jogo_start(self):
 		pass
 
-	def cronometro(self):
-		
-	def getUP(self): #teto
+	def fase01(self):
+		px.load('1.pyxres')
+		self.corFundo = 0
+		px.cls(self.corFundo)	
+		px.bltm(0,0,1,0,0,128,128,0,0,1.0)
+
+	def fase02(self):
 		pass
 
-	def getFront(self): #parede da porta
+	def fase03(self):
 		pass
 
-	def getRight(self): # parede da direita
-		pass
-
-	def getLeft(self): # parede da esquerda
-		pass
-
-	def getDown(self): # piso
-		pass
-
-	def getBotton(self): # parede do fundo
-		pass
-
-	def update(self):
-		pass
-
-	def draw(self):
+	def fase04(self):
 		pass
