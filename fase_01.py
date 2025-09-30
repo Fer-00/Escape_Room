@@ -16,9 +16,9 @@ class Fase01:
 			return 0
 			
 	def setarFrames(self,aqui,la):
-		aux = transicao(aqui,la)
+		aux = self.transicao(aqui,la)
 		#comando para recuperar indice do aqui
-		return lista_frames[index + aux]
+		return self.lista_frames[self.index + aux]
 
 	def jogo_start(self):
 		pass
