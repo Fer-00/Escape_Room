@@ -42,7 +42,7 @@ class Engine:
 			elapsed = int(time.time() - self.start_time)
 			self.minutos = elapsed // 60
 			self.segundos = elapsed % 60
-			px.text(16, 88, f"{self.minutos:02}:{self.segundos:02}", 7)  # Mostra o tempo no canto
+			px.text(100, 120, f"{self.minutos:02}:{self.segundos:02}", 7)  # Mostra o tempo no canto
 		elif id == 2: #venceu
 			tempo = str(self.minutos) + ":" + str(self.segundos)
 			self.final.tela_final()
