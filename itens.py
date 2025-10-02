@@ -1,3 +1,5 @@
+import json
+
 class Itens():
 	def __init__(self):
 		self.tranparencia =
@@ -8,4 +10,3 @@ class Itens():
 		self.y = 
 
 	def objeto(self):
-		
