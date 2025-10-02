@@ -1,12 +1,12 @@
-import json
+import json, os
 
 class Itens():
 	def __init__(self):
-		self.tranparencia =
-		self.altura = 
-		self.comprimento =
-		self.valor =
-		self.x =
-		self.y = 
-
-	def objeto(self):
+		try:
+			with open('itens.json','r') as file:
+				json_itens = json.load(file)
+				print(json_itens)
+		except ValueError as e:
+			print("Erro: ",str(e))
+#	def objeto(self):
+Itens()
