@@ -1,4 +1,4 @@
-from objetos import * 
+from objetos2 import * 
 import pyxel as px
 import time
 

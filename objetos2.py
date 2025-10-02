@@ -70,7 +70,6 @@ def number(x,y,number):
     elif number == "?":
         px.blt(x, y, 0,44,163,2,5,0)
 
-
     elif number == ":":
         px.blt(x, y, 0,40,164,1,3,0)
-                   
+                

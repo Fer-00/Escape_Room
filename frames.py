@@ -1,7 +1,7 @@
 #responsável por controlar os frames do jogo, as trocas entre eles e o que vai aparecer sobre todos eles
 
 import pyxel as px
-from objetos import *
+from objetos2 import *
 
 class Frames:
 	def __init__(self):

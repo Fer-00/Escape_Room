@@ -1,9 +1,12 @@
-from objetos import * 
+from objetos2 import * 
+from interacao import * 
 import pyxel as px
 import time
 
 class Jogo:
     def __init__(self):
+        self.barricade01 = 35
+        self.barricade02 = 65
         self.x = 0
         self.start_time = time.time()  # Marca o início do jogo
         px.init(128, 128, title="Escape Room")
@@ -11,16 +14,32 @@ class Jogo:
         px.run(self.draw,self.update)
 
         
+
     def update(self):
+
+        self.mouse_x = px.mouse_x
+        self.mouse_y = px.mouse_y
+
         if px.btnp(px.KEY_Q):
             if self.x < 4:
                 self.x += 1
             else:
                 self.x = 0
+
+        if self.mouse_x >= 35 and self.mouse_x <= 65 and self.mouse_y >= 64 and self.mouse_y <= 100 and px.btn(px.MOUSE_BUTTON_LEFT) and self.x == barricada_value["valor"]:
+            print("passou por aqui")
+            self.barricade01 = 1000
+            self.barricade02 = 1000
+            barricada(self.barricade01,self.barricade02)
+        
             
 
     def draw(self):
+        
+
+        px.cls(0)
         px.bltm(0,0,1,258+126,0,128,128,0,0,1.0)
+        px.mouse(True)
 
         HUD(100,100)
         
@@ -34,7 +53,7 @@ class Jogo:
         abajur(77,96)
 
         porta(35,64)
-        barricada(35,65)
+        barricada(self.barricade01,self.barricade02)
         barricada(35,100)
         cofre(18,96)
         relogio(28,18)
@@ -50,6 +69,8 @@ class Jogo:
             bilhete(100,100)
         elif self.x == 3:
             ferramenta(102,102)
+
+        
 
 # Calcula tempo decorrido
         elapsed = int(time.time() - self.start_time)
