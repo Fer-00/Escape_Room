@@ -1,0 +1,111 @@
+{
+  "martelo": { 
+    "nome":"Martelo",
+    "x": 54,
+    "y": 116,
+    "valor": 1,
+    "comprimento": 5,
+    "altura": 10,
+    "transparencia": 0
+    
+  },
+  "chave": { 
+    "nome":"Chave",
+    "x": 69,
+    "y": 117,
+    "valor": 2,
+    "comprimento": 8,
+    "altura": 5,
+    "transparencia": 0
+    
+  },
+  "bilhete": { 
+    "nome":"Bilhete", 
+    "x": 48,
+    "y": 128,
+    "valor": 3,
+    "comprimento": 15,
+    "altura": 15,
+    "transparencia": 0
+    
+  },
+  "ferramenta": { 
+    "nome":"Ferramenta",
+    "x": 67,
+    "y": 130,
+    "valor": 4,
+    "comprimento": 11,
+    "altura": 11,
+    "transparencia": 0
+    
+  },
+  "bau": {    
+    "nome":"Báu",
+    "x": 40,
+    "y": 48,
+    "valor": 0,
+    "comprimento": 32,
+    "altura": 32,
+    "transparencia": 0
+    
+  },
+  "relogio": { 
+    "nome":"Relógio",
+    "x": 139,
+    "y": 25,
+    "valor": 0,
+    "comprimento": 25,
+    "altura": 13,
+    "transparencia": 0
+    
+  },
+  "porta": { 
+    "nome":"Porta",
+    "x": 64,
+    "y": 32,
+    "valor": 0,
+    "comprimento": 32,
+    "altura": 64,
+    "transparencia": 0
+    
+  },
+  "placaEscape": { 
+    "nome":"Placa",
+    "x": 33,
+    "y": 17,
+    "valor": 0,
+    "comprimento": 40,
+    "altura": 14,
+    "transparencia": 0
+    
+  },
+  "HUD": { 
+    "nome":"HUD",
+    "x": 48,
+    "y": 96,
+    "valor": 0,
+    "comprimento": 16,
+    "altura": 16,
+    "transparencia": 15
+    
+  },
+  "cadeado": { 
+    "nome":"Cadeado",
+    "x": 85,
+    "y": 116,
+    "valor": 0,
+    "comprimento": 6,
+    "altura": 8,
+    "transparencia": 15
+    
+  },
+  "tabua": { 
+    "nome":"Tábua",
+    "x": 96,
+    "y": 96,
+    "valor": 0,
+    "comprimento": 24,
+    "altura": 24,
+    "transparencia": 15
+  }
+}
