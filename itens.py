@@ -15,9 +15,9 @@ class Itens(object):
 				with open('itens.json','r') as file:
 					json_itens = json.load(file)
 					self.itens = [Itens(**json_itens[item]) for item in json_itens.keys()]
-					print(self.itens)
-					for item in self.itens:
-						print(item.nome,"-",item.comprimento,"-",item.altura)
+#					print(self.itens)
+#					for item in self.itens:
+#						print(item.nome,"-",item.comprimento,"-",item.altura)
 			except ValueError as e:
 				print("Erro: ",str(e))
 	
@@ -34,6 +34,54 @@ class Itens(object):
 		for item in self.itens:
 #			print(item.nome)
 			if nome == item.nome:
-				pyxel.blt(x, y, 0,item.x,item.y,item.comprimento,item.altura,item.transparencia) #checar esse comando
+				item.xTela = x
+				item.yTela = y
+				pyxel.blt(item.xTela, item.yTela, 0,item.x,item.y,item.comprimento,item.altura,item.transparencia)
 			else:
 				pass
+
+	def criaObjetoInventario(self,nome):
+		for item in self.itens:
+			if nome == item.nome:
+				pyxel.blt(item.xTela, item.yTela, 0,item.x,item.y,item.comprimento,item.altura,item.transparencia)
+			else:
+				pass
+
+	def clicado(self,x,y,selecionado):
+		itemClicado = self.getItem(x,y)
+		itemInventario = self.getItem2(selecionado)
+		if (itemClicado == itemInventario) and itemClicado != 0:
+			self.setUsos(selecionado)
+			return True
+
+	def getItem(self,x,y):
+		for item in self.itens:
+			if (x >= item.xTela and x <= item.xTela + item.comprimento) and (y >= item.yTela and y <= item.yTela + item.altura):
+				return item.valor
+			else:
+				pass
+
+	def getItem2(self,nome):
+		for item in self.itens:
+			if item.nome == nome:
+				return item.valor
+
+	def getUsos(self,nome):
+		for item in self.itens:
+			if item.nome == nome:
+				return item.usos
+
+	def setUsos(self,nome):
+		for item in self.itens:
+			if item.nome == nome:
+				item.usos = item.usos - 1
+
+	def delete(self,nome):
+		for item in self.itens:
+			if item.nome == nome:
+				del item
+
+	def getId(self,nome):
+		for item in self.itens:
+			if item.nome == nome:
+				return item.id

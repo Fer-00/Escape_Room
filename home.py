@@ -1,11 +1,11 @@
 import pyxel as px
-import frames
+import itens
 
 #Tela de inicio/Welcome
 
 class Home:
 	def __init__(self):
-		self.frame = frames.Frames()
+		pass
 
 	def rodarInicial(self):
 		self.corFundo = 4
