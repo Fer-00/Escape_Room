@@ -2,6 +2,7 @@ from objetos2 import *
 from interacao import * 
 import pyxel as px
 import time
+import itens
 
 class Jogo:
     def __init__(self):

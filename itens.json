@@ -1,99 +1,137 @@
 {
   "martelo": { 
+    "nome":"Martelo",
+    "xTela" : 105,
+    "yTela" : 104,
     "x": 54,
     "y": 116,
     "valor": 1,
     "comprimento": 5,
     "altura": 10,
-    "transparencia": 0
-    
+    "transparencia": 0,
+    "id" : 1,
+    "usos": 0    
   },
-  "chave": {
+  "chave": { 
+    "nome":"Chave",
+    "xTela" : 104,
+    "yTela" : 106,
     "x": 69,
     "y": 117,
     "valor": 2,
     "comprimento": 8,
     "altura": 5,
-    "transparencia": 0
-    
+    "transparencia": 0,
+    "id" : 2,
+    "usos": 0    
   },
-  "bilhete": {
+  "bilhete": { 
+    "nome":"Bilhete", 
+    "xTela" : 100,
+    "yTela" : 100,
     "x": 48,
     "y": 128,
     "valor": 3,
     "comprimento": 15,
     "altura": 15,
-    "transparencia": 0
-    
+    "transparencia": 0,
+    "id" : 3,
+    "usos": 0    
   },
-  "ferramenta": {
+  "ferramenta": { 
+    "nome":"Ferramenta",
+    "xTela" : 102,
+    "yTela" : 102,
     "x": 67,
     "y": 130,
     "valor": 4,
     "comprimento": 11,
     "altura": 11,
-    "transparencia": 0
-    
+    "transparencia": 0,
+    "id" : 4,
+    "usos": 0    
   },
-  "bau": {
+  "bau": {    
+    "nome":"Báu",
+    "xTela" : 0,
+    "yTela" : 0,
     "x": 40,
     "y": 48,
     "valor": 0,
     "comprimento": 32,
     "altura": 32,
-    "transparencia": 0
-    
+    "transparencia": 0,
+    "usos": 0    
   },
-  "relogio": {
+  "relogio": { 
+    "nome":"Relógio",
+    "xTela" : 0,
+    "yTela" : 0,
     "x": 139,
     "y": 25,
     "valor": 0,
     "comprimento": 25,
     "altura": 13,
-    "transparencia": 0
-    
+    "transparencia": 0,
+    "usos": 0    
   },
-  "porta": {
+  "porta": { 
+    "nome":"Porta",
+    "xTela" : 0,
+    "yTela" : 0,
     "x": 64,
     "y": 32,
-    "valor": 0,
+    "valor": 2,
     "comprimento": 32,
     "altura": 64,
-    "transparencia": 0
-    
+    "transparencia": 0,
+    "usos": 0    
   },
-  "placaEscape": {
+  "placaEscape": { 
+    "nome":"Placa",
+    "xTela" : 0,
+    "yTela" : 0,
     "x": 33,
     "y": 17,
     "valor": 0,
     "comprimento": 40,
     "altura": 14,
-    "transparencia": 0
-    
+    "transparencia": 0,
+    "usos": 0    
   },
-  "HUD": {
+  "HUD": { 
+    "nome":"HUD",
+    "xTela" : 0,
+    "yTela" : 0,
     "x": 48,
     "y": 96,
     "valor": 0,
     "comprimento": 16,
     "altura": 16,
-    "transparencia": 15
-    
+    "transparencia": 15,
+    "usos": 0    
   },
-  "cadeado": {
+  "cadeado": { 
+    "nome":"Cadeado",
+    "xTela" : 0,
+    "yTela" : 0,
     "x": 85,
     "y": 116,
     "valor": 0,
     "comprimento": 6,
     "altura": 8,
-    "transparencia": 15
-    
+    "transparencia": 15,
+    "usos": 0    
   },
-  "tabua": {
+  "tabua": { 
+    "nome":"Tábua",
+    "xTela" : 0,
+    "yTela" : 0,
     "x": 96,
     "y": 96,
     "valor": 0,
     "comprimento": 24,
     "altura": 24,
     "transparencia": 15
+  }
 }

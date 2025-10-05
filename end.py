@@ -1,19 +1,18 @@
 #Tela de Fim/Conclusão
 
 import pyxel as px
-import os, frames
+import os
 
 scores = "tempos.txt" #para mostrar os melhores tempos
 
 class End:
-	def __init__(self):
-		self.frame = frames.Frames()
+	def __init__(self, ganhou = False):
 		#self.tempo_final = self.frame.cronometro()
 		self.tempos = []
 		self.top5 = []
 		self.populaTop5()
 
-	def tela_final(self):
+	def tela_final(self, tempo_final = "Você Perdeu!!"):
 		px.cls(0)
 		px.text(60,20,f"Tempo atual:{tempo_final}s",7)
 		px.text(60,20,f"RANKING:",10)
