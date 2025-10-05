@@ -5,7 +5,7 @@ class Fase01:
 	def __init__(self):
 		self.item = itens.Itens()
 		self.fim = end.End()
-        self.start_time = time.time()
+		self.start_time = time.time()
 		self.inventario = []
 		self.venceu = False
 
@@ -16,13 +16,13 @@ class Fase01:
 		pass
 
 	def timer(self):
-        elapsed = int(time.time() - self.start_time)
-        minutos = elapsed // 60
-        segundos = elapsed % 60
+		elapsed = int(time.time() - self.start_time)
+		minutos = elapsed // 60
+		segundos = elapsed % 60
 		self.tempo = str(self.minutos) + ":" + str(self.segundos)
-        if minutos == 5:
-        	self.perdeu()
-        px.text(31, 23, f"{minutos:02}:{segundos:02}", 7)  # Mostra o tempo no canto
+		if minutos == 5:
+			self.perdeu()
+		px.text(31, 23, f"{minutos:02}:{segundos:02}", 7)  # Mostra o tempo no canto
 
 	def fase01(self):
 		px.load('1.pyxres')

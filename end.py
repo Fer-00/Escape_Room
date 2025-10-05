@@ -1,5 +1,4 @@
 #Tela de Fim/Conclusão
-
 import pyxel as px
 import os
 
