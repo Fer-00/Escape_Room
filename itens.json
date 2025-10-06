@@ -22,8 +22,8 @@
     "comprimento": 8,
     "altura": 4,
     "transparencia": 15,
-    "id" : 2,
-    "usos": 0    
+    "id" : 23,
+    "usos": 3  
   },
   "chave_g": { 
     "nome":"chave_g",
@@ -36,7 +36,7 @@
     "altura": 6,
     "transparencia": 15,
     "id" : 2,
-    "usos": 0    
+    "usos": 3    
   },
   "bilhete": { 
     "nome":"bilhete", 
@@ -74,6 +74,7 @@
     "comprimento": 32,
     "altura": 32,
     "transparencia": 0,
+    "id": 0,
     "usos": 0    
   },
   "relogio": { 
@@ -86,6 +87,7 @@
     "comprimento": 25,
     "altura": 13,
     "transparencia": 15,
+    "id":0,
     "usos": 0    
   },
   "porta": { 
@@ -98,6 +100,7 @@
     "comprimento": 32,
     "altura": 64,
     "transparencia": 15,
+    "id":0,
     "usos": 0    
   },
   "placaEscape": { 
@@ -110,6 +113,7 @@
     "comprimento": 32,
     "altura": 14,
     "transparencia": 15,
+    "id":0,
     "usos": 0    
   },
   "HUD": { 
@@ -122,6 +126,7 @@
     "comprimento": 16,
     "altura": 16,
     "transparencia": 15,
+    "id":0,
     "usos": 0    
   },
   "HUD02": { 
@@ -134,6 +139,7 @@
     "comprimento": 16,
     "altura": 16,
     "transparencia": 15,
+    "id":0,
     "usos": 0  
   },
   "cadeado": { 
@@ -146,6 +152,7 @@
     "comprimento": 6,
     "altura": 8,
     "transparencia": 15,
+    "id":0,
     "usos": 0    
   },
   "tabua_dir": { 
@@ -157,7 +164,8 @@
     "valor": 0,
     "comprimento": 32,
     "altura": 24,
-    "transparencia": 15
+    "transparencia": 15,
+    "id":0
   },
   "tabua_esq": { 
     "nome":"tabua_esq",
@@ -168,7 +176,8 @@
     "valor": 0,
     "comprimento": 32,
     "altura": 24,
-    "transparencia": 15
+    "transparencia": 15,
+    "id":0
   },
   "cofre_azul": { 
     "nome":"cofre_azul",
@@ -179,7 +188,8 @@
     "valor": 0,
     "comprimento": 16,
     "altura": 32,
-    "transparencia": 0
+    "transparencia": 0,
+    "id":0
   },
   "cofre_madeira": { 
     "nome":"cofre_madeira",
@@ -190,7 +200,8 @@
     "valor": 0,
     "comprimento": 16,
     "altura": 32,
-    "transparencia": 0
+    "transparencia": 0,
+    "id":0
   },
   "abajur_claro": { 
     "nome":"abajur_claro",
@@ -201,7 +212,8 @@
     "valor": 0,
     "comprimento": 10,
     "altura": 14,
-    "transparencia": 0
+    "transparencia": 0,
+    "id":0
   },
   "armario_01_madeira": { 
     "nome":"armario_01_madeira",
@@ -212,7 +224,8 @@
     "valor": 0,
     "comprimento": 32,
     "altura": 24,
-    "transparencia": 0
+    "transparencia": 0,
+    "id":0
   },
   "armario_02_madeira": { 
     "nome":"armario_02_madeira",
@@ -223,7 +236,8 @@
     "valor": 0,
     "comprimento": 32,
     "altura": 24,
-    "transparencia": 0
+    "transparencia": 0,
+    "id":0
   },
   "mesinha": { 
     "nome":"mesinha_madeira",
@@ -234,7 +248,8 @@
     "valor": 0,
     "comprimento": 24,
     "altura": 18,
-    "transparencia": 11
+    "transparencia": 11,
+    "id":0
   },
   "quadro_01": { 
     "nome":"quadro_01",
@@ -245,7 +260,8 @@
     "valor": 0,
     "comprimento": 16,
     "altura": 16,
-    "transparencia": 0
+    "transparencia": 0,
+    "id":0
   },
   "quadro_02": { 
     "nome":"quadro_02",
@@ -256,7 +272,8 @@
     "valor": 0,
     "comprimento": 16,
     "altura": 16,
-    "transparencia": 0
+    "transparencia": 0,
+    "id":0
   },
   "quadro_empty": { 
     "nome":"quadro_vazio",
@@ -267,7 +284,8 @@
     "valor": 0,
     "comprimento": 16,
     "altura": 16,
-    "transparencia": 15
+    "transparencia": 15,
+    "id":0
   },
   "alerta": { 
     "nome":"alerta",
@@ -278,7 +296,8 @@
     "valor": 0,
     "comprimento": 13,
     "altura": 12,
-    "transparencia": 15
+    "transparencia": 15,
+    "id":0
   },
   "aquario": { 
     "nome":"aquario",
@@ -289,7 +308,8 @@
     "valor": 0,
     "comprimento": 16,
     "altura": 12,
-    "transparencia": 0
+    "transparencia": 0,
+    "id":0
   },
   "tubulacao": { 
     "nome":"tubulacao",
@@ -300,7 +320,8 @@
     "valor": 0,
     "comprimento": 16,
     "altura": 16,
-    "transparencia": 15
+    "transparencia": 15,
+    "id":0
   },
   "pe_cabra": { 
     "nome":"pe_cabra",
@@ -311,6 +332,7 @@
     "valor": 0,
     "comprimento": 9,
     "altura": 11,
-    "transparencia": 0
+    "transparencia": 0,
+    "id": 20
   }
 }

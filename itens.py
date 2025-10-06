@@ -40,9 +40,11 @@ class Itens(object):
 			else:
 				pass
 
-	def criaObjetoInventario(self,nome):
+	def criaObjetoInventario(self,id):
+		print(self.itens)
+		print(id)
 		for item in self.itens:
-			if nome == item.nome:
+			if id == item.id:
 				pyxel.blt(item.xTela, item.yTela, 0,item.x,item.y,item.comprimento,item.altura,item.transparencia)
 			else:
 				pass
@@ -82,6 +84,8 @@ class Itens(object):
 				del item
 
 	def getId(self,nome):
+		print("getId",nome)
 		for item in self.itens:
 			if item.nome == nome:
+				print("item.id",item.id)
 				return item.id

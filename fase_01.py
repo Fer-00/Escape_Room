@@ -16,8 +16,12 @@ class Fase01:
 		pass
 
 	def ctlInventario(self, id = 0):
-		self.item.criaObjeto("HUD",100,100)
+		print("ctl inventario")
+		print("inventario",self.inventario)
+		self.item.criaObjeto("HUD02",110,110)
+		print("id",id)
 		if id in self.inventario:
+			print("ifclt")
 			self.item.criaObjetoInventario(id)
 
 	def timer(self):
@@ -63,6 +67,7 @@ class Fase01:
 		self.item.criaObjeto("mesinha_madeira",84,110)
 		
 		self.item.criaObjeto("tabua_esq",50,100)
+
 	def fase03(self):
 		px.load('1.pyxres')
 		px.cls(0)
@@ -109,7 +114,10 @@ class Fase01:
 		self.fim.tela_final()
 
 	def addItem(self, nome): # return id
-		self.inventario.addend(self.item.getId(nome))
+		print("nome",nome)
+		if nome not in self.inventario:
+			self.inventario.append(self.item.getId(nome))
+		print("getitem",self.item.getId(nome))
 
 	def testaItem(self,item): #chamada toda vez que o item é utilizado para checar se ainda há usos
 		if (self.item.getUsos(item) > 0):
