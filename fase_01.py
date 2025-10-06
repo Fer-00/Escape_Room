@@ -91,7 +91,7 @@ class Fase01:
 		for i in range (10): #faz um monte de tubo no topo da tela
 			self.item.criaObjeto("tubulacao",i*16,20)
 		
-		self.item.criaObjeto("ferramenta",70,13)
+		self.item.criaObjeto("pe_cabra",70,13)
 
 
 	def fase04(self):

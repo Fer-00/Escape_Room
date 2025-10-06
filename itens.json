@@ -301,5 +301,16 @@
     "comprimento": 16,
     "altura": 16,
     "transparencia": 15
+  },
+  "pe_cabra": { 
+    "nome":"pe_cabra",
+    "xTela" : 0,
+    "yTela" : 0,
+    "x": 68,
+    "y": 146,
+    "valor": 0,
+    "comprimento": 9,
+    "altura": 11,
+    "transparencia": 0
   }
 }
