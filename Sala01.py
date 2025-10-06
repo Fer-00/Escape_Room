@@ -1,5 +1,5 @@
 from objetos2 import * 
-from interacao import * 
+
 import pyxel as px
 import time
 import itens
@@ -7,7 +7,7 @@ import itens
 class Jogo:
     def __init__(self):
         self.barricade01 = 35
-        self.barricade02 = 65
+        self.barricade02 = 70
         self.x = 0
         self.start_time = time.time()  # Marca o início do jogo
         px.init(128, 128, title="Escape Room")
@@ -39,10 +39,10 @@ class Jogo:
         
 
         px.cls(0)
-        px.bltm(0,0,1,258+126,0,128,128,0,0,1.0)
+        px.bltm(0,0,1,256,0,128,128,0,0,1.0)
         px.mouse(True)
 
-        HUD(100,100)
+        HUD02(100,100)
         
         for i in range (10): #faz um monte de tubo no topo da tela
             tubulacao(i*16,0)
@@ -54,9 +54,10 @@ class Jogo:
         abajur(77,96)
 
         porta(35,64)
-        barricada(self.barricade01,self.barricade02)
+        barricada01(self.barricade01,self.barricade02)
         barricada(35,100)
         cofre(18,96)
+        cadeado(23,107)
         relogio(28,18)
 
         quadro01(90,31)

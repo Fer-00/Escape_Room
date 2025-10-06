@@ -15,6 +15,11 @@ class Fase01:
 	def setarFases(self):
 		pass
 
+	def ctlInventario(self, id = 0):
+		self.item.criaObjeto("HUD",100,100)
+		if id in self.inventario:
+			self.item.criaObjetoInventario(id)
+
 	def timer(self):
 		elapsed = int(time.time() - self.start_time)
 		minutos = elapsed // 60
@@ -26,15 +31,68 @@ class Fase01:
 
 	def fase01(self):
 		px.load('1.pyxres')
-		self.corFundo = 0
-		px.cls(self.corFundo)	
-		px.bltm(0,0,1,0,0,128,128,0,0,1.0)
+		px.cls(0)
+		px.bltm(0,0,1,128,0,128,128,0,0,1.0)
+		self.item.criaObjeto("porta",50,64)
+		self.item.criaObjeto("placa",50,50)
+		self.item.criaObjeto("cadeado",72,96)
+		self.item.criaObjeto("mesinha_madeira",20,110)
+		self.item.criaObjeto("chave_g",26,103)
+	
 
 	def fase02(self):
-		pass
+		px.load('1.pyxres')
+		px.cls(0)
+		px.bltm(0,0,1,128,0,128,128,0,0,1.0)
+		self.item.criaObjeto("porta",50,64)
+		self.item.criaObjeto("placa",50,50)
+		self.item.criaObjeto("cadeado",72,96)
+		self.item.criaObjeto("quadro_02",100,50)
 
+		self.item.criaObjeto("armario_02_madeira",0,104)
+		self.item.criaObjeto("relogio",3,91)
+		self.item.criaObjeto("armario_02_madeira",0,64)
+		self.item.criaObjeto("aquario",88,98)
+
+		self.item.criaObjeto("quadro_vazio",90,70)
+		self.item.criaObjeto("ferramenta",92,72)
+		self.item.criaObjeto("chave_g",8,57)
+
+		self.item.criaObjeto("HUD02",110,110)
+
+		self.item.criaObjeto("mesinha_madeira",84,110)
+		
+		self.item.criaObjeto("tabua_esq",50,100)
 	def fase03(self):
-		pass
+		px.load('1.pyxres')
+		px.cls(0)
+		px.bltm(0,0,1,128,0,128,128,0,0,1.0)
+		self.item.criaObjeto("porta",50,64)
+		self.item.criaObjeto("placa",50,50)
+		self.item.criaObjeto("cadeado",72,96)
+		self.item.criaObjeto("tabua_esq",50,100)
+
+		
+
+		self.item.criaObjeto("bau",0,96)
+		self.item.criaObjeto("tabua_esq",0,100)
+		self.item.criaObjeto("cofre_madeira",84,96)
+		self.item.criaObjeto("abajur_claro",87,82)	
+
+		self.item.criaObjeto("quadro_01",00,76)
+		self.item.criaObjeto("quadro_02",20,76)
+
+		self.item.criaObjeto("armario_01_madeira",0,50)
+		self.item.criaObjeto("armario_02_madeira",84,50)
+		self.item.criaObjeto("relogio",88,37)	
+
+		self.item.criaObjeto("HUD02",110,110)
+
+		for i in range (10): #faz um monte de tubo no topo da tela
+			self.item.criaObjeto("tubulacao",i*16,20)
+		
+		self.item.criaObjeto("ferramenta",70,13)
+
 
 	def fase04(self):
 		pass
@@ -61,8 +119,7 @@ class Fase01:
 
 	def lenInventario(self):
 		return len(self.inventario)		
+	
 
-	def ctlInventario(self, id = 0):
-		self.item.criaObjeto("Hud",100,100)
-		if id in self.inventario:
-			self.item.criaObjetoInventario(id)
+
+	

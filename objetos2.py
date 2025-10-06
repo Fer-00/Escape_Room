@@ -28,11 +28,17 @@ def placaEscape(x,y):
 def HUD(x,y):
     px.blt(x, y, 0,48,96,16,16,15)
 
+def HUD02(x,y):
+    px.blt(x, y, 0,32,96,16,16,15)
+
 def cadeado(x,y):
     px.blt(x, y, 0,85,116,6,8,15)
 
 def barricada(x,y):
     px.blt(x, y, 0,96,96,32,24,15)
+
+def barricada01(x,y):
+    px.blt(x, y, 0,120,176,32,24,15)
 
 def cofre(x,y):
     px.blt(x, y, 0,96,128,16,32,0)
