@@ -16,14 +16,10 @@ class Fase01:
 	def setarFases(self):
 		pass
 
-	def ctlInventario(self, id = 0):
-		print("ctl inventario")
-		print("inventario",self.inventario)
+	def ctlInventario(self, identificador):
 		self.item.criaObjeto("HUD02",110,110)
-		print("id",id)
-		if id in self.inventario:
-			print("ifclt")
-			self.item.criaObjetoInventario(id)
+		if identificador in self.inventario:
+			self.item.criaObjetoInventario(identificador)
 
 	def timer(self):
 		elapsed = int(time.time() - self.start_time)
@@ -128,10 +124,8 @@ class Fase01:
 		self.fim.tela_final()
 
 	def addItem(self, nome): # return id
-		print("nome",nome)
-		if nome not in self.inventario:
+		if self.item.getId(nome) not in self.inventario:
 			self.inventario.append(self.item.getId(nome))
-		print("getitem",self.item.getId(nome))
 
 	def testaItem(self,item): #chamada toda vez que o item é utilizado para checar se ainda há usos
 		if (self.item.getUsos(item) > 0):
@@ -140,9 +134,13 @@ class Fase01:
 			self.item.delete(item)
 
 	def lenInventario(self):
+<<<<<<< HEAD
 		return len(self.inventario)		
 	
 
 
 
 	
+=======
+		return len(self.inventario)	
+>>>>>>> bcace952be6e3fef0698d181516b94d2cdf63eb3
