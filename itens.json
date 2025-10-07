@@ -193,6 +193,18 @@
     "transparencia": 0,
     "id":0
   },
+  "cofre_madeira_aberto": { 
+    "nome":"cofre_madeira_aberto",
+    "xTela" : 0,
+    "yTela" : 0,
+    "x": 96,
+    "y": 224,
+    "valor": 0,
+    "comprimento": 16,
+    "altura": 32,
+    "transparencia": 0,
+    "id":0
+  },
   "abajur_claro": { 
     "nome":"abajur_claro",
     "xTela" : 0,
@@ -324,5 +336,17 @@
     "altura": 11,
     "transparencia": 0,
     "id": 20
+  },
+  "bau_aberto": { 
+    "nome":"bau_aberto",
+    "xTela" : 0,
+    "yTela" : 0,
+    "x": 64,
+    "y": 184,
+    "valor": 4,
+    "comprimento": 32,
+    "altura": 32,
+    "transparencia": 0,
+    "id": 1231
   }
 }

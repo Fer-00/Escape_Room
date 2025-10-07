@@ -26,14 +26,14 @@ class Fase01:
 		else:
 			pass
 
-	def timer(self):
+	def timer(self,x,y):
 		elapsed = int(time.time() - self.start_time)
 		minutos = elapsed // 60
 		segundos = elapsed % 60
-		self.tempo = str(self.minutos) + ":" + str(self.segundos)
+		self.tempo = str(minutos) + ":" + str(segundos)
 		if minutos == 5:
 			self.perdeu()
-		px.text(31, 23, f"{minutos:02}:{segundos:02}", 7)  # Mostra o tempo no canto
+		px.text(x, y, f"{minutos:02}:{segundos:02}", 7)  # Mostra o tempo no canto
 
 	def fase01(self):
 		px.load('1.pyxres')
@@ -74,6 +74,7 @@ class Fase01:
 			self.item.criaObjeto("cadeado",72,96) #se estiver na lista de obstaculos, printa, senão não
 		if "tabua_esq" in self.getObstaculos():
 			self.item.criaObjeto("tabua_esq",50,100)
+		
 
 
 	def fase03(self):
@@ -106,7 +107,11 @@ class Fase01:
 			self.item.criaObjeto("cadeado",72,96) #se estiver na lista de obstaculos, printa, senão não
 		if "tabua_esq1" in self.getObstaculos():
 			self.item.criaObjeto("tabua_esq",50,100)
-
+		if "tabua_dir" in self.getObstaculos():
+			self.item.criaObjeto("tabua_dir",0,100)
+		else:
+			self.item.criaObjeto("bau_aberto",0,96)
+			self.item.criaObjeto("chave_g",10,100)
 
 	def fase04(self):
 		pass
