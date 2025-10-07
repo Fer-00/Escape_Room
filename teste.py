@@ -46,7 +46,7 @@ class Engine:
 		
 		self.item.criaObjeto("porta",0,0)
 		self.item.criaObjeto("porta",50,50)
-		
+		px.blt(10, 10, 0,82,131,13,6,15)
 		px.mouse(True)
 
 Engine()

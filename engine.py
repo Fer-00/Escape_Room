@@ -24,9 +24,9 @@ class Engine:
 		if self.fases.lenInventario() > 0:
 			self.fases.ctlInventario(self.x)
 
-		if px.btnp(px.KEY_Q):
-			if self.fases.lenInventario() > 0:
-				self.x += 1
+#		if px.btnp(px.KEY_Q):
+#			if self.fases.lenInventario() > 0:
+#				self.x += 1
 				
 		elif id == 1 and (px.btnp(px.KEY_SPACE) or px.btnp(px.KEY_RETURN)):
 			id = 0
@@ -35,20 +35,22 @@ class Engine:
 		else:
 			pass
 
-		if px.btnp(px.KEY_Q):
-			if self.x < 4:
-				self.x += 1
-			else:
-				self.x = 0
+#		if px.btnp(px.KEY_Q):
+#			if self.x < 4:
+#				self.x += 1
+#			else:
+#				self.x = 0
 
-		if px.btnp(px.MOUSE_BUTTON_LEFT,10) and self.x == 1:
+		if px.btnp(px.MOUSE_BUTTON_LEFT) and self.x == 2:
+			print("if INTERAGIU")
 			if(self.item.clicado(self.mouse_x,self.mouse_y,"chave_g")):
 				print("INTERAGIU")
 			else:
-					pass
+				print("Não INTERAGIU")
 
-		elif px.btnp(px.MOUSE_BUTTON_LEFT,10) and ((self.mouse_x <= 39 and self.mouse_x >= 26) and (self.mouse_y <= 109 and self.mouse_y >= 103)):
+		elif px.btnp(px.MOUSE_BUTTON_LEFT) and ((self.mouse_x <= 39 and self.mouse_x >= 26) and (self.mouse_y <= 109 and self.mouse_y >= 103)):
 				self.fases.addItem("chave_g")
+				self.x = 2
 				self.fases.ctlInventario(self.x)
 		else:
 			pass

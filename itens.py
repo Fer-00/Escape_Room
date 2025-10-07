@@ -1,6 +1,6 @@
-import json, os, pyxel
+import json, os, pyxel, fase_01
 
-class Itens(object):
+class Itens():
 	def __init__(self,**kwargs):
 #		print("Construtor")
 #		if isinstance(kwargs, dict):
@@ -32,7 +32,6 @@ class Itens(object):
 #			raise ValueError(f"Item {nome} não existe")
 #		else:
 		for item in self.itens:
-#			print(item.nome)
 			if nome == item.nome:
 				item.xTela = x
 				item.yTela = y
@@ -40,12 +39,11 @@ class Itens(object):
 			else:
 				pass
 
-	def criaObjetoInventario(self,id):
-		print(self.itens)
-		print(id)
+
+	def criaObjetoInventario(self,temp):
 		for item in self.itens:
-			if id == item.id:
-				pyxel.blt(item.xTela, item.yTela, 0,item.x,item.y,item.comprimento,item.altura,item.transparencia)
+			if temp == item.id:
+				pyxel.blt(111, 111, 0,item.x,item.y,item.comprimento,item.altura,item.transparencia)
 			else:
 				pass
 
@@ -56,17 +54,19 @@ class Itens(object):
 			self.setUsos(selecionado)
 			return True
 
+	def getItem2(self,nome):
+		for item in self.itens:
+			if item.nome == nome:
+				return item.valor	
+	
 	def getItem(self,x,y):
 		for item in self.itens:
+			if item.nome == "porta":
+				print("Porta getItem",item)
 			if (x >= item.xTela and x <= item.xTela + item.comprimento) and (y >= item.yTela and y <= item.yTela + item.altura):
 				return item.valor
 			else:
 				pass
-
-	def getItem2(self,nome):
-		for item in self.itens:
-			if item.nome == nome:
-				return item.valor
 
 	def getUsos(self,nome):
 		for item in self.itens:
@@ -84,8 +84,6 @@ class Itens(object):
 				del item
 
 	def getId(self,nome):
-		print("getId",nome)
 		for item in self.itens:
 			if item.nome == nome:
-				print("item.id",item.id)
 				return item.id
