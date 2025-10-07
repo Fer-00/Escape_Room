@@ -125,6 +125,10 @@ class Engine:
 				print("Saindo")
 				self.fases.removeItem("chave_g")
 				self.fases.removeItem("pe_cabra")
+				self.fases.addObstaculo("cadeado2") #Adiciona os obstaculos da próxima fase / cadeado1 para não dar conflito
+				self.fases.addObstaculo("cadeado03") #Adiciona os obstaculos da próxima fase / cadeado1 para não dar conflito
+				self.fases.addObstaculo("tabua_esq1") #Adiciona os obstaculos da próxima fase
+				self.fases.addObstaculo("tabua_dir") #Adiciona os obstaculos da próxima fase
 				self.x = 0
 				id = 4
 				print(id)
@@ -140,8 +144,8 @@ class Engine:
 				print("pegou chave")
 
 
-
-
+		
+			
 	def draw(self):
 		global id #Controla os frames/fases
 		if id == 1: #Seta a Tela Inicial
