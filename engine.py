@@ -62,7 +62,7 @@ class Engine:
 		if id == 1:
 			self.inicial.rodarInicial()
 		elif id == 0:
-			self.fases.fase03()
+			self.fases.fase01()
 			#if len(self.fases.venceu()) > 0:
 			#	self.final.tela_final(self.fases.venceu())
 		else:

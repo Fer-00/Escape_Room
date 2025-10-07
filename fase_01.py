@@ -134,13 +134,5 @@ class Fase01:
 			self.item.delete(item)
 
 	def lenInventario(self):
-<<<<<<< HEAD
 		return len(self.inventario)		
-	
 
-
-
-	
-=======
-		return len(self.inventario)	
->>>>>>> bcace952be6e3fef0698d181516b94d2cdf63eb3
