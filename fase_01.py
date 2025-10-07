@@ -9,6 +9,7 @@ class Fase01:
 		self.inventario = []
 		self.obstaculos = []
 		self.venceu = False
+		self.item_inventario = -3
 
 	def transicao(self):
 		pass
@@ -16,10 +17,13 @@ class Fase01:
 	def setarFases(self):
 		pass
 
-	def ctlInventario(self, identificador):
+	def ctlInventario(self, temp):
 		self.item.criaObjeto("HUD02",110,110)
-		if identificador in self.inventario:
-			self.item.criaObjetoInventario(identificador)
+		if temp < self.lenInventario():
+			self.item.criaObjetoInventario(self.inventario[temp])
+			self.item_inventario = self.inventario[temp]
+		else:
+			pass
 
 	def timer(self):
 		elapsed = int(time.time() - self.start_time)
@@ -41,17 +45,18 @@ class Fase01:
 		self.item.criaObjeto("cadeado",72,96)
 		self.item.criaObjeto("mesinha_madeira",20,110)
 		self.item.criaObjeto("chave_g",26,103)
+
 	
 
 	def fase02(self):
 		px.load('1.pyxres')
 		px.cls(0)
 		px.bltm(0,0,1,128,0,128,128,0,0,1.0)
-		self.obstaculos = ["cadeado","tabua_esq"]
+		
 
 		self.item.criaObjeto("porta",50,64)
 		self.item.criaObjeto("placa",50,50)
-		self.item.criaObjeto("cadeado",72,96)
+
 		self.item.criaObjeto("quadro_02",100,50)
 
 		self.item.criaObjeto("armario_02_madeira",0,104)
@@ -67,7 +72,7 @@ class Fase01:
 
 		self.item.criaObjeto("mesinha_madeira",84,110)
 		
-		self.item.criaObjeto("tabua_esq",50,100)
+
 
 	def fase03(self):
 		px.load('1.pyxres')
@@ -123,9 +128,14 @@ class Fase01:
 	def perdeu(self):
 		self.fim.tela_final()
 
-	def addItem(self, nome): # return id
-		if self.item.getId(nome) not in self.inventario:
-			self.inventario.append(self.item.getId(nome))
+	def addItem(self, nome): # adiciona item ao inventário
+		if nome not in self.inventario:
+			self.inventario.append(nome)
+
+	def removeItem(self,nome): # remove item do inventário
+		if nome in self.inventario:
+			self.inventario.remove(nome)
+	
 
 	def testaItem(self,item): #chamada toda vez que o item é utilizado para checar se ainda há usos
 		if (self.item.getUsos(item) > 0):
@@ -134,5 +144,26 @@ class Fase01:
 			self.item.delete(item)
 
 	def lenInventario(self):
-		return len(self.inventario)		
+		return len(self.inventario)	
 
+	def clique(self,x,y,item_selecionado):
+			if(self.item.clicado(x,y,item_selecionado)):
+				return True
+			else:
+				return False
+
+	def getItemSelecionado(self):
+		return self.item_inventario
+
+	def getObstaculos(self):
+		return self.obstaculos
+	
+	def removeObstaculo(self,obstaculo):
+		if obstaculo in self.obstaculos:
+			self.obstaculos.remove(self.obstaculos.index(obstaculo))
+		else:
+			pass
+
+	def delete(self,nome):
+		self.item.delete(nome)
+		

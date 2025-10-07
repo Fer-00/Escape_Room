@@ -42,7 +42,7 @@ class Itens():
 
 	def criaObjetoInventario(self,temp):
 		for item in self.itens:
-			if temp == item.id:
+			if temp == item.nome:
 				pyxel.blt(111, 111, 0,item.x,item.y,item.comprimento,item.altura,item.transparencia)
 			else:
 				pass
@@ -61,8 +61,6 @@ class Itens():
 	
 	def getItem(self,x,y):
 		for item in self.itens:
-			if item.nome == "porta":
-				print("Porta getItem",item)
 			if (x >= item.xTela and x <= item.xTela + item.comprimento) and (y >= item.yTela and y <= item.yTela + item.altura):
 				return item.valor
 			else:
