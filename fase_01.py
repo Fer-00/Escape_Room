@@ -8,6 +8,7 @@ class Fase01:
 		self.start_time = time.time()
 		self.inventario = []
 		self.venceu = False
+		self.item_inventario = -3
 
 	def transicao(self):
 		pass
@@ -15,10 +16,13 @@ class Fase01:
 	def setarFases(self):
 		pass
 
-	def ctlInventario(self, identificador):
+	def ctlInventario(self, temp):
 		self.item.criaObjeto("HUD02",110,110)
-		if identificador in self.inventario:
-			self.item.criaObjetoInventario(identificador)
+		if temp < self.lenInventario():
+			self.item.criaObjetoInventario(self.inventario[temp])
+			self.item_inventario = self.inventario[temp]
+		else:
+			pass
 
 	def timer(self):
 		elapsed = int(time.time() - self.start_time)
@@ -110,8 +114,8 @@ class Fase01:
 		self.fim.tela_final()
 
 	def addItem(self, nome): # return id
-		if self.item.getId(nome) not in self.inventario:
-			self.inventario.append(self.item.getId(nome))
+		if nome not in self.inventario:
+			self.inventario.append(nome)
 
 	def testaItem(self,item): #chamada toda vez que o item é utilizado para checar se ainda há usos
 		if (self.item.getUsos(item) > 0):
@@ -121,3 +125,12 @@ class Fase01:
 
 	def lenInventario(self):
 		return len(self.inventario)	
+
+	def clique(self,x,y,item_selecionado):
+			if(self.item.clicado(x,y,item_selecionado)):
+				return True
+			else:
+				return False
+
+	def getItemSelecionado(self):
+		return self.item_inventario

@@ -42,7 +42,7 @@ class Itens():
 
 	def criaObjetoInventario(self,temp):
 		for item in self.itens:
-			if temp == item.id:
+			if temp == item.nome:
 				pyxel.blt(111, 111, 0,item.x,item.y,item.comprimento,item.altura,item.transparencia)
 			else:
 				pass
