@@ -9,8 +9,8 @@ class Fase01:
 		self.inventario = []
 		self.obstaculos = []
 		self.itensTela = []
-		self.venceu = False
 		self.item_inventario = -3
+		self.tempo_partida = 0
 
 	def transicao(self):
 		pass
@@ -28,12 +28,16 @@ class Fase01:
 
 	def timer(self,x,y):
 		elapsed = int(time.time() - self.start_time)
+		self.tempo_partida = elapsed
 		minutos = elapsed // 60
 		segundos = elapsed % 60
 		self.tempo = str(minutos) + ":" + str(segundos)
 		if minutos == 5:
 			self.perdeu()
 		px.text(x, y, f"{minutos:02}:{segundos:02}", 7)  # Mostra o tempo no canto
+
+	def getTempo(self):
+		return self.tempo_partida
 
 	def fase01(self):
 		px.load('1.pyxres')
@@ -116,13 +120,9 @@ class Fase01:
 	def fase04(self):
 		pass
 
-	def venceu(self,tempo):
-		if self.venceu == True:
-			with open("tempos.txt","a") as t:
-				t.write(f"\n{self.tempo}")
-			return tempo
-		else:
-			return ""
+	def venceu(self):
+		with open("tempos.txt","a") as t:
+			t.write(f"{self.tempo_partida},\n")
 
 	def perdeu(self):
 		self.fim.tela_final()
@@ -134,13 +134,6 @@ class Fase01:
 	def removeItem(self,nome): # remove item do inventário
 		if nome in self.inventario:
 			self.inventario.remove(nome)
-	
-
-	def testaItem(self,item): #chamada toda vez que o item é utilizado para checar se ainda há usos
-		if (self.item.getUsos(item) > 0):
-			pass
-		else:
-			self.item.delete(item)
 
 	def lenInventario(self):
 		return len(self.inventario)	

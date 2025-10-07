@@ -60,16 +60,6 @@ class Itens():
 			else:
 				pass
 
-#	def getUsos(self,nome):
-#		for item in self.itens:
-#			if item.nome == nome:
-#				return item.usos
-
-#	def setUsos(self,nome):
-#		for item in self.itens:
-#			if item.nome == nome:
-#				item.usos = item.usos - 1
-
 	def delete(self,nome):
 		for item in self.itens:
 			if item.nome == nome:
