@@ -7,6 +7,7 @@ class Fase01:
 		self.fim = end.End()
 		self.start_time = time.time()
 		self.inventario = []
+		self.obstaculos = []
 		self.venceu = False
 
 	def transicao(self):
@@ -37,6 +38,8 @@ class Fase01:
 		px.load('1.pyxres')
 		px.cls(0)
 		px.bltm(0,0,1,128,0,128,128,0,0,1.0)
+		self.obstaculos = ["cadeado"]
+
 		self.item.criaObjeto("porta",50,64)
 		self.item.criaObjeto("placa",50,50)
 		self.item.criaObjeto("cadeado",72,96)
@@ -48,6 +51,8 @@ class Fase01:
 		px.load('1.pyxres')
 		px.cls(0)
 		px.bltm(0,0,1,128,0,128,128,0,0,1.0)
+		self.obstaculos = ["cadeado","tabua_esq"]
+
 		self.item.criaObjeto("porta",50,64)
 		self.item.criaObjeto("placa",50,50)
 		self.item.criaObjeto("cadeado",72,96)
@@ -72,15 +77,24 @@ class Fase01:
 		px.load('1.pyxres')
 		px.cls(0)
 		px.bltm(0,0,1,128,0,128,128,0,0,1.0)
+		self.obstaculos = ["cadeado","tabua_esq"]
+		x_tabua_esq = 50
+		y_tabua_esq = 100
+
+		x_cadeado = 72
+		y_cadeado = 96
+
+		x_tabua_esq02 = 0
+		y_tabua_esq02 = 100
+
 		self.item.criaObjeto("porta",50,64)
 		self.item.criaObjeto("placa",50,50)
-		self.item.criaObjeto("cadeado",72,96)
-		self.item.criaObjeto("tabua_esq",50,100)
+		self.item.criaObjeto("cadeado",x_cadeado,y_cadeado)
+		self.item.criaObjeto("tabua_esq",x_tabua_esq,y_tabua_esq)
 
-		
-
+	
 		self.item.criaObjeto("bau",0,96)
-		self.item.criaObjeto("tabua_esq",0,100)
+		self.item.criaObjeto("tabua_esq",x_tabua_esq02,y_tabua_esq02)
 		self.item.criaObjeto("cofre_madeira",84,96)
 		self.item.criaObjeto("abajur_claro",87,82)	
 
@@ -128,6 +142,7 @@ class Fase01:
 	def lenInventario(self):
 		return len(self.inventario)		
 	
+
 
 
 	

@@ -44,6 +44,7 @@ class Engine:
 		if px.btnp(px.MOUSE_BUTTON_LEFT,10) and self.x == 1:
 			if(self.item.clicado(self.mouse_x,self.mouse_y,"chave_g")):
 				print("INTERAGIU")
+				self.fases.abrePorta("chave_g")
 			else:
 					pass
 
@@ -54,15 +55,12 @@ class Engine:
 			pass
 
 			
-		
-
-	
 	def draw(self):
 		global id
 		if id == 1:
 			self.inicial.rodarInicial()
 		elif id == 0:
-			self.fases.fase01()
+			self.fases.fase03()
 			#if len(self.fases.venceu()) > 0:
 			#	self.final.tela_final(self.fases.venceu())
 		else:
