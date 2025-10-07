@@ -17,7 +17,7 @@ class End:
 		px.text(60,20,f"RANKING:",10)
 		for i,j in enumerate(self.top5[:5]):
 			px.text(60,20+i*10,f"{i+1}: {j} s",11)
-		px.text(60,20,f"Precione Q para sair",6)
+		px.text(60,20,f"Precione ESC para sair",6)
 
 	def populaTop5(self):
 		if not os.path.exists(scores):

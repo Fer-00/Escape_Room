@@ -2,22 +2,14 @@ import json, os, pyxel, fase_01
 
 class Itens():
 	def __init__(self,**kwargs):
-#		print("Construtor")
-#		if isinstance(kwargs, dict):
 		if len(kwargs) != 0:
-#			print("if construtor")
 			for key,valor in kwargs.items():
-#				print("seta")
 				setattr(self,key,valor)
 		else:
 			try:
-#				print("Abertura do Arquivo")
 				with open('itens.json','r') as file:
 					json_itens = json.load(file)
 					self.itens = [Itens(**json_itens[item]) for item in json_itens.keys()]
-#					print(self.itens)
-#					for item in self.itens:
-#						print(item.nome,"-",item.comprimento,"-",item.altura)
 			except ValueError as e:
 				print("Erro: ",str(e))
 	
@@ -28,16 +20,16 @@ class Itens():
 		pass
 
 	def criaObjeto(self,nome,x,y):
-#		if nome not in self.itens:
-#			raise ValueError(f"Item {nome} não existe")
-#		else:
 		for item in self.itens:
-			if nome == item.nome:
-				item.xTela = x
-				item.yTela = y
-				pyxel.blt(item.xTela, item.yTela, 0,item.x,item.y,item.comprimento,item.altura,item.transparencia)
+			if nome not in self.itens:
+				raise ValueError(f"Item {nome} não existe")
 			else:
-				pass
+				if nome == item.nome:
+					item.xTela = x
+					item.yTela = y
+					pyxel.blt(item.xTela, item.yTela, 0,item.x,item.y,item.comprimento,item.altura,item.transparencia)
+				else:
+					pass
 
 
 	def criaObjetoInventario(self,temp):
