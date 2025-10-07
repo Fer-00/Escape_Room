@@ -8,6 +8,7 @@ class Fase01:
 		self.start_time = time.time()
 		self.inventario = []
 		self.obstaculos = []
+		self.itensTela = []
 		self.venceu = False
 		self.item_inventario = -3
 
@@ -38,15 +39,12 @@ class Fase01:
 		px.load('1.pyxres')
 		px.cls(0)
 		px.bltm(0,0,1,128,0,128,128,0,0,1.0)
-		self.obstaculos = ["cadeado"]
-
 		self.item.criaObjeto("porta",50,64)
 		self.item.criaObjeto("placa",50,50)
-		self.item.criaObjeto("cadeado",72,96)
 		self.item.criaObjeto("mesinha_madeira",20,110)
 		self.item.criaObjeto("chave_g",26,103)
-
-	
+		if "cadeado" in self.getObstaculos(): #por último para garantir que não seja sobreposto
+			self.item.criaObjeto("cadeado",72,96)	#se cadeado esta na lista de obstaculos, printa ele, se não, não
 
 	def fase02(self):
 		px.load('1.pyxres')
@@ -72,30 +70,21 @@ class Fase01:
 
 		self.item.criaObjeto("mesinha_madeira",84,110)
 		
+		if "cadeado1" in self.getObstaculos(): #cadeado1 para não dar conflito
+			self.item.criaObjeto("cadeado",72,96) #se estiver na lista de obstaculos, printa, senão não
+		if "tabua_esq" in self.getObstaculos():
+			self.item.criaObjeto("tabua_esq",50,100)
 
 
 	def fase03(self):
 		px.load('1.pyxres')
 		px.cls(0)
 		px.bltm(0,0,1,128,0,128,128,0,0,1.0)
-		self.obstaculos = ["cadeado","tabua_esq"]
-		x_tabua_esq = 50
-		y_tabua_esq = 100
-
-		x_cadeado = 72
-		y_cadeado = 96
-
-		x_tabua_esq02 = 0
-		y_tabua_esq02 = 100
 
 		self.item.criaObjeto("porta",50,64)
 		self.item.criaObjeto("placa",50,50)
-		self.item.criaObjeto("cadeado",x_cadeado,y_cadeado)
-		self.item.criaObjeto("tabua_esq",x_tabua_esq,y_tabua_esq)
-
 	
 		self.item.criaObjeto("bau",0,96)
-		self.item.criaObjeto("tabua_esq",x_tabua_esq02,y_tabua_esq02)
 		self.item.criaObjeto("cofre_madeira",84,96)
 		self.item.criaObjeto("abajur_claro",87,82)	
 
@@ -112,6 +101,11 @@ class Fase01:
 			self.item.criaObjeto("tubulacao",i*16,20)
 		
 		self.item.criaObjeto("pe_cabra",70,13)
+
+		if "cadeado2" in self.getObstaculos(): #cadeado1 para não dar conflito
+			self.item.criaObjeto("cadeado",72,96) #se estiver na lista de obstaculos, printa, senão não
+		if "tabua_esq1" in self.getObstaculos():
+			self.item.criaObjeto("tabua_esq",50,100)
 
 
 	def fase04(self):
@@ -155,15 +149,17 @@ class Fase01:
 	def getItemSelecionado(self):
 		return self.item_inventario
 
-	def getObstaculos(self):
+	def getObstaculos(self): #retorna a lista de obstaculos
 		return self.obstaculos
 	
-	def removeObstaculo(self,obstaculo):
+	def removeObstaculo(self,obstaculo): #remove obstaculo da lista
 		if obstaculo in self.obstaculos:
-			self.obstaculos.remove(self.obstaculos.index(obstaculo))
+			self.obstaculos.remove(obstaculo)
 		else:
 			pass
 
-	def delete(self,nome):
-		self.item.delete(nome)
-		
+	def addObstaculo(self,obstaculo): #adiciona obstaculo a lista de controle
+		if obstaculo not in self.obstaculos:
+			self.obstaculos.append(obstaculo)
+		else:
+			pass

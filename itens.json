@@ -9,8 +9,7 @@
     "comprimento": 5,
     "altura": 10,
     "transparencia": 0,
-    "id" : 1,
-    "usos": 0    
+    "id" : 1    
   },
   "chave": { 
     "nome":"chave",
@@ -48,8 +47,7 @@
     "comprimento": 15,
     "altura": 15,
     "transparencia": 0,
-    "id" : 3,
-    "usos": 0    
+    "id" : 3    
   },
   "ferramenta": { 
     "nome":"ferramenta",
@@ -61,8 +59,7 @@
     "comprimento": 11,
     "altura": 11,
     "transparencia": 0,
-    "id" : 4,
-    "usos": 0    
+    "id" : 4    
   },
   "bau": {    
     "nome":"bau",
@@ -74,8 +71,7 @@
     "comprimento": 32,
     "altura": 32,
     "transparencia": 0,
-    "id": 0,
-    "usos": 0    
+    "id": 0    
   },
   "relogio": { 
     "nome":"relogio",
@@ -87,8 +83,7 @@
     "comprimento": 25,
     "altura": 13,
     "transparencia": 15,
-    "id":0,
-    "usos": 0    
+    "id":0    
   },
   "porta": { 
     "nome":"porta",
@@ -100,8 +95,7 @@
     "comprimento": 32,
     "altura": 64,
     "transparencia": 15,
-    "id":0,
-    "usos": 0    
+    "id":0    
   },
   "placaEscape": { 
     "nome":"placa",
@@ -113,8 +107,7 @@
     "comprimento": 32,
     "altura": 14,
     "transparencia": 15,
-    "id":0,
-    "usos": 0    
+    "id":0    
   },
   "HUD": { 
     "nome":"HUD",
@@ -126,8 +119,7 @@
     "comprimento": 16,
     "altura": 16,
     "transparencia": 15,
-    "id":0,
-    "usos": 0    
+    "id":0    
   },
   "HUD02": { 
     "nome":"HUD02",
@@ -139,8 +131,7 @@
     "comprimento": 16,
     "altura": 16,
     "transparencia": 15,
-    "id":0,
-    "usos": 0  
+    "id":0  
   },
   "cadeado": { 
     "nome":"cadeado",
@@ -148,12 +139,11 @@
     "yTela" : 0,
     "x": 85,
     "y": 116,
-    "valor": 101,
+    "valor": 2,
     "comprimento": 6,
     "altura": 8,
     "transparencia": 15,
-    "id":0,
-    "usos": 0    
+    "id":0    
   },
   "tabua_dir": { 
     "nome":"tabua_dir",
@@ -161,7 +151,7 @@
     "yTela" : 0,
     "x": 120,
     "y": 176,
-    "valor": 0,
+    "valor": 4,
     "comprimento": 32,
     "altura": 24,
     "transparencia": 15,
@@ -173,7 +163,7 @@
     "yTela" : 0,
     "x": 96,
     "y": 96,
-    "valor": 0,
+    "valor": 4,
     "comprimento": 32,
     "altura": 24,
     "transparencia": 15,
@@ -329,7 +319,7 @@
     "yTela" : 0,
     "x": 68,
     "y": 146,
-    "valor": 0,
+    "valor": 4,
     "comprimento": 9,
     "altura": 11,
     "transparencia": 0,

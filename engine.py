@@ -8,19 +8,6 @@ class Engine:
 		self.inicial = home.Home()
 		self.fases = fase_01.Fase01()
 		self.x = 0 #controla as trocas do inventário
-
-		self.obstaculos01 = ["cadeado"]
-		self.obstaculos02 = ["cadeado","tabua_esq"]
-
-		self.x_cadeado01 = 72
-		self.y_cadeado01 = 96
-
-		self.x_cadeado02 = 72
-		self.y_cadeado02 = 96
-
-		self.x_tabua_esq02 = 50
-		self.y_tabua_esq02 = 100
-		
 		
 		global id #Controla os frames/fases
 		id = 1 #Controla os frames/fases
@@ -48,53 +35,56 @@ class Engine:
 				
 		elif id == 1 and (px.btnp(px.KEY_SPACE) or px.btnp(px.KEY_RETURN)): #Controla os frames/fases 
 			id = 0 #Abre a fase 1
+			self.fases.addObstaculo("cadeado")
 		elif id == 1 and (self.mouse_x <= 79 and self.mouse_x >= 49) and (self.mouse_y <= 71 and self.mouse_y >= 57) and px.btn(px.MOUSE_BUTTON_LEFT):
 			id = 0 #Abre a fase 1
+			self.fases.addObstaculo("cadeado")
 		else:
 			pass
 
 		if id == 0:
-				
 			if px.btnp(px.MOUSE_BUTTON_LEFT) and self.fases.getItemSelecionado() == "chave_g": #Verifica se houve um clique do mouse com o item certo selecionado no inventário
-				if(self.fases.clique(self.mouse_x,self.mouse_y,"chave_g")) and ('cadeado' in self.obstaculos01): #Verifica se a área clicada é a correspondente do objeto selecionado no inventário
-					print("removendo cadeado")
-					print(self.obstaculos01)
-					self.obstaculos01.remove("cadeado")
-					self.fases.delete("cadeado") 
-					#self.x_cadeado01 = 1000
-					#self.y_cadeado01 = 1000
-				elif (self.fases.clique(self.mouse_x,self.mouse_y,"chave_g")) and ('cadeado' not in self.obstaculos01):
+				if(self.fases.clique(self.mouse_x,self.mouse_y,"chave_g")) and ('cadeado' in self.fases.getObstaculos()): #getObstacucos retorna toda a lista na fases
+					self.fases.removeObstaculo("cadeado") #remove o obstaculo da lista de obstaculos no fases
+				elif (self.fases.clique(self.mouse_x,self.mouse_y,"chave_g")) and ('cadeado' not in self.fases.getObstaculos()): #getObstacucos retorna toda a lista na fases
 					print("passando para próxima fase")
 					self.fases.removeItem("chave_g")
+					self.fases.addObstaculo("cadeado1") #Adiciona os obstaculos da próxima fase / cadeado1 para não dar conflito
+					self.fases.addObstaculo("tabua_esq") #Adiciona os obstaculos da próxima fase
+					self.x = 0 #Zera a x por precaução
 					id = 2
-					
 				else:
 					print("Não INTERAGIU")
 
 			elif px.btnp(px.MOUSE_BUTTON_LEFT) and ((self.mouse_x <= 39 and self.mouse_x >= 26) and (self.mouse_y <= 109 and self.mouse_y >= 103)): #Se clicar no item ele é adicionado ao inventário
 				self.fases.addItem("chave_g") #Adiona item ao invetário pelo nome
-			
-			
+
+			else:
+				pass
+						
 		if id == 2:
 				
-			if px.btnp(px.MOUSE_BUTTON_LEFT) and self.fases.getItemSelecionado() == "chave_g": #Verifica se houve um clique do mouse com o item certo selecionado no inventário
-				if(self.fases.clique(self.mouse_x,self.mouse_y,"chave_g")) and ('cadeado' in self.obstaculos02): #Verifica se a área clicada é a correspondente do objeto selecionado no inventário
-					print("removendo cadeado")
-					print(self.obstaculos02)
-					self.obstaculos02.remove("cadeado")
-					self.x_cadeado02 = 1000
-					self.y_cadeado02 = 1000
-				if(self.fases.clique(self.mouse_x,self.mouse_y,"ferramenta")) and ('tabua_esq' in self.obstaculos02):
+			if px.btnp(px.MOUSE_BUTTON_LEFT) and self.fases.getItemSelecionado() == "chave_g" and len(self.fases.getObstaculos()) != 0 : #Verifica se houve um clique do mouse com o item certo selecionado no inventário e se o invetário de obstacúlos não está vazio
+
+				if(self.fases.clique(self.mouse_x,self.mouse_y,"chave_g")) and ('cadeado1' in self.fases.getObstaculos()) and ('tabua_esq' not in self.fases.getObstaculos()): #Verifica se a área clicada é a correspondente do objeto selecionado no inventário
+					print("If interação chave") #Objetos sobrepostos, clica em um some o outro
+					print("removendo cadeado") #Solução: o cadeado só pode ser clicado depois que a tábua não está mais lá
+					self.fases.removeObstaculo("cadeado1") #remove cadeado da lista de obstaculos, 
+
+			elif px.btnp(px.MOUSE_BUTTON_LEFT) and self.fases.getItemSelecionado() == "ferramenta" and len(self.fases.getObstaculos()) != 0:
+				if(self.fases.clique(self.mouse_x,self.mouse_y,"ferramenta")) and ('tabua_esq' in self.fases.getObstaculos()):
 					print("removendo tabua")
-					print(self.obstaculos02)
-					self.obstaculos02.remove("tabua_esq")
-					self.x_tabua_esq02 = 1000
-					self.y_tabua_esq02 = 1000
-				
-				if ((self.fases.clique(self.mouse_x,self.mouse_y,"chave_g")) or (self.fases.clique(self.mouse_x,self.mouse_y,"ferramenta"))) and ('cadeado' not in self.obstaculos01) and ('tabua_esq' not in self.obstaculos02):
-					id == 3
-				else:
-					print("Não INTERAGIU")
+					self.fases.removeObstaculo("tabua_esq")
+			elif ((px.btnp(px.MOUSE_BUTTON_LEFT)) and (self.fases.clique(self.mouse_x,self.mouse_y,"chave_g")) and len(self.fases.getObstaculos()) == 0):
+				print("Saindo")
+				self.fases.removeItem("chave_g")
+				self.fases.removeItem("ferramenta")
+				self.fases.addObstaculo("cadeado2") #Adiciona os obstaculos da próxima fase / cadeado1 para não dar conflito
+				self.fases.addObstaculo("tabua_esq1") #Adiciona os obstaculos da próxima fase
+				self.x = 0
+				id = 3
+			else:
+				pass
 
 			if px.btnp(px.MOUSE_BUTTON_LEFT) and ((self.mouse_x <= 21 and self.mouse_x >= 8) and (self.mouse_y <= 63 and self.mouse_y >= 57)): #Se clicar no item ele é adicionado ao inventário
 				self.fases.addItem("chave_g") #Adiona item ao invetário pelo nome
@@ -102,19 +92,33 @@ class Engine:
 			if px.btnp(px.MOUSE_BUTTON_LEFT) and ((self.mouse_x <= 103 and self.mouse_x >= 92) and (self.mouse_y <= 83 and self.mouse_y >= 72)): #Se clicar no item ele é adicionado ao inventário
 				self.fases.addItem("ferramenta") #Adiona item ao invetário pelo nome
 				print("pegou ferramenta")
-		"""if self.obstaculos01 == [] and id == 0: #Verifica se os obstáculos da fase 1 foram todos removidos
-			id = 2	#começa a fase 2
-			pass
-		elif self.obstaculos02 == [] and id == 2: #Verifica se os obstáculos da fase 2 foram todos removidos
-			id = 3	#começa a fase 3	
-			pass"""
-
-
-
-
-
-
 		
+		if id == 3:
+				
+			if px.btnp(px.MOUSE_BUTTON_LEFT) and self.fases.getItemSelecionado() == "chave_g" and len(self.fases.getObstaculos()) != 0 : #Verifica se houve um clique do mouse com o item certo selecionado no inventário e se o invetário de obstacúlos não está vazio
+
+				if(self.fases.clique(self.mouse_x,self.mouse_y,"chave_g")) and ('cadeado2' in self.fases.getObstaculos()) and ('tabua_esq1' not in self.fases.getObstaculos()): #Verifica se a área clicada é a correspondente do objeto selecionado no inventário
+					print("If interação chave") #Objetos sobrepostos, clica em um some o outro
+					print("removendo cadeado") #Solução: o cadeado só pode ser clicado depois que a tábua não está mais lá
+					self.fases.removeObstaculo("cadeado2") #remove cadeado da lista de obstaculos, 
+
+			elif px.btnp(px.MOUSE_BUTTON_LEFT) and self.fases.getItemSelecionado() == "pe_cabra" and len(self.fases.getObstaculos()) != 0:
+				if(self.fases.clique(self.mouse_x,self.mouse_y,"pe_cabra")) and ('tabua_esq1' in self.fases.getObstaculos()):
+					print("removendo tabua")
+					self.fases.removeObstaculo("tabua_esq1")
+			elif ((px.btnp(px.MOUSE_BUTTON_LEFT)) and (self.fases.clique(self.mouse_x,self.mouse_y,"chave_g")) and len(self.fases.getObstaculos()) == 0):
+				print("Saindo")
+				self.fases.removeItem("chave_g")
+				self.fases.removeItem("pe_cabra")
+				self.x = 0
+				id == 4
+			else:
+				pass
+
+			if px.btnp(px.MOUSE_BUTTON_LEFT) and ((self.mouse_x <= 79 and self.mouse_x >= 70) and (self.mouse_y <= 24 and self.mouse_y >= 13)): #Se clicar no item ele é adicionado ao inventário
+				self.fases.addItem("pe_cabra") #Adiona item ao invetário pelo nome
+				print("pegou pé de cabra")
+
 
 	def draw(self):
 		global id #Controla os frames/fases
@@ -122,15 +126,10 @@ class Engine:
 			self.inicial.rodarInicial()
 		elif id == 0: #Controla os frames/fases
 			self.fases.fase01() #Seta a Fase 1
-			#px.blt(self.x_cadeado01, self.y_cadeado01, 0,85,116,6,8,15)
-			
 			#if len(self.fases.venceu()) > 0:
 			#	self.final.tela_final(self.fases.venceu())
 		elif id == 2:
 			self.fases.fase02() #Seta a Fase 2
-			px.blt(self.x_cadeado02, self.y_cadeado02, 0,85,116,6,8,15)
-			px.blt(self.x_tabua_esq02, self.y_tabua_esq02, 0,96,96,32,24,15)
-
 		elif id == 3:
 			self.fases.fase03() #Seta a Fase 3
 		else:

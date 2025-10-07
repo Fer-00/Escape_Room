@@ -21,15 +21,12 @@ class Itens():
 
 	def criaObjeto(self,nome,x,y):
 		for item in self.itens:
-			if nome not in self.itens:
-				raise ValueError(f"Item {nome} não existe")
+			if nome == item.nome:
+				item.xTela = x
+				item.yTela = y
+				pyxel.blt(item.xTela, item.yTela, 0,item.x,item.y,item.comprimento,item.altura,item.transparencia)
 			else:
-				if nome == item.nome:
-					item.xTela = x
-					item.yTela = y
-					pyxel.blt(item.xTela, item.yTela, 0,item.x,item.y,item.comprimento,item.altura,item.transparencia)
-				else:
-					pass
+				pass
 
 
 	def criaObjetoInventario(self,temp):
@@ -40,10 +37,9 @@ class Itens():
 				pass
 
 	def clicado(self,x,y,selecionado):
-		itemClicado = self.getItem(x,y)
 		itemInventario = self.getItem2(selecionado)
+		itemClicado = self.getItem(x,y,itemInventario)
 		if (itemClicado == itemInventario) and itemClicado != 0:
-			self.setUsos(selecionado)
 			return True
 
 	def getItem2(self,nome):
@@ -51,22 +47,22 @@ class Itens():
 			if item.nome == nome:
 				return item.valor	
 	
-	def getItem(self,x,y):
+	def getItem(self,x,y,item_selecionado):
 		for item in self.itens:
-			if (x >= item.xTela and x <= item.xTela + item.comprimento) and (y >= item.yTela and y <= item.yTela + item.altura):
+			if (x >= item.xTela and x <= item.xTela + item.comprimento) and (y >= item.yTela and y <= item.yTela + item.altura) and item.valor == item_selecionado:
 				return item.valor
 			else:
 				pass
 
-	def getUsos(self,nome):
-		for item in self.itens:
-			if item.nome == nome:
-				return item.usos
+#	def getUsos(self,nome):
+#		for item in self.itens:
+#			if item.nome == nome:
+#				return item.usos
 
-	def setUsos(self,nome):
-		for item in self.itens:
-			if item.nome == nome:
-				item.usos = item.usos - 1
+#	def setUsos(self,nome):
+#		for item in self.itens:
+#			if item.nome == nome:
+#				item.usos = item.usos - 1
 
 	def delete(self,nome):
 		for item in self.itens:
